@@ -25,7 +25,7 @@ export const hobbiesData: LocaleData<HobbiesData> = {
       { category: "Teacher", item: "Takeuchi Sensei", icon: "👨‍🏫" },
       { category: "Snack", item: "Cucumber Chips", icon: "🥒" },
       { category: "Color", item: "Pink", icon: "🩷" },
-      { category: "Animal", item: "Small Fish & Nana", icon: "🐱" },
+      { category: "Animal", item: "xiaoyu & qiqi", icon: "🐱" },
       { category: "Sport", item: "Swimming", icon: "🏊‍♀️" },
       { category: "Place", item: "Hokkaido", icon: "🗾" },
       { category: "Drink", item: "Rum", icon: "🥃" },
