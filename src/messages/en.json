@@ -7,7 +7,11 @@
   "home": {
     "title": "Welcome to Chin Ukei's Room!",
     "subtitle": "A cute girl from Shanghai, living in Jimbocho 💕",
-    "welcome": "Hello! Thank you for visiting my site!"
+    "welcome": "Hello! Thank you for visiting my site!",
+    "moreInfo": "Want to know more? 💕",
+    "moreInfoDesc": "Check out my profile and hobbies for more details!",
+    "viewProfile": "View Profile 👤",
+    "viewHobbies": "View Hobbies 🎀"
   },
   "profile": {
     "title": "Profile",

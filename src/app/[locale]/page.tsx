@@ -88,14 +88,14 @@ export default function HomePage({params: {locale}}: {params: {locale: Locale}})
       {/* Call to Action */}
       <div className="text-center">
         <div className="card-cute p-8 max-w-2xl mx-auto">
-          <h2 className="text-3xl font-bold text-pink-600 mb-4">もっと知りたい？ 💕</h2>
-          <p className="text-gray-700 mb-6">私のプロフィールや趣味について詳しく見てみてね！</p>
+          <h2 className="text-3xl font-bold text-pink-600 mb-4">{t('home.moreInfo')}</h2>
+          <p className="text-gray-700 mb-6">{t('home.moreInfoDesc')}</p>
           <div className="flex gap-4 justify-center">
             <Link href={`/${locale}/profile`} className="cute-button">
-              プロフィールを見る 👤
+              {t('home.viewProfile')}
             </Link>
             <Link href={`/${locale}/hobbies`} className="cute-button">
-              趣味を見る 🎀
+              {t('home.viewHobbies')}
             </Link>
           </div>
         </div>

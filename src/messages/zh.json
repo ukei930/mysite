@@ -7,7 +7,11 @@
   "home": {
     "title": "欢迎来到陈雨桂的小屋！",
     "subtitle": "来自上海，现居神保町的可爱女孩 💕",
-    "welcome": "你好！感谢你访问我的网站！"
+    "welcome": "你好！感谢你访问我的网站！",
+    "moreInfo": "想了解更多？ 💕",
+    "moreInfoDesc": "查看我的个人资料和兴趣爱好吧！",
+    "viewProfile": "查看个人资料 👤",
+    "viewHobbies": "查看兴趣爱好 🎀"
   },
   "profile": {
     "title": "个人资料",
