@@ -1,9 +1,10 @@
-import {useTranslations} from 'next-intl';
+import {useTranslations, setRequestLocale} from 'next-intl';
 import Link from 'next/link';
 import { hobbiesData } from '@/data/hobbies';
 import { Locale } from '@/types';
 
 export default function HobbiesPage({params: {locale}}: {params: {locale: Locale}}) {
+  setRequestLocale(locale);
   const t = useTranslations();
   const hobbies = hobbiesData[locale];
 

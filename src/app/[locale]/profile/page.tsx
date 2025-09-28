@@ -1,10 +1,11 @@
-import {useTranslations} from 'next-intl';
+import {useTranslations, setRequestLocale} from 'next-intl';
 import Image from 'next/image';
 import Link from 'next/link';
 import { profileData } from '@/data/profile';
 import { Locale } from '@/types';
 
 export default function ProfilePage({params: {locale}}: {params: {locale: Locale}}) {
+  setRequestLocale(locale);
   const t = useTranslations();
   const profile = profileData[locale];
 
