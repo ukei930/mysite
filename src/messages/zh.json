@@ -1,4 +1,7 @@
 {
+  "common": {
+    "siteTitle": "雨桂的小屋"
+  },
   "navigation": {
     "home": "首页",
     "profile": "个人资料",

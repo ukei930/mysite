@@ -1,4 +1,7 @@
 {
+  "common": {
+    "siteTitle": "Ukei's Room"
+  },
   "navigation": {
     "home": "Home",
     "profile": "Profile",

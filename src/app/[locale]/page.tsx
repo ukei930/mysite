@@ -18,7 +18,7 @@ export default function HomePage({params: {locale}}: {params: {locale: Locale}})
       <div className="container mx-auto px-4 py-4 sm:py-8">
         {/* Navigation */}
         <nav className="flex flex-col sm:flex-row justify-between items-center mb-8 sm:mb-12 gap-4">
-          <div className="text-xl sm:text-2xl font-bold text-pink-600">💕 Ukei&apos;s Room</div>
+          <div className="text-xl sm:text-2xl font-bold text-pink-600">💕 {t('common.siteTitle')}</div>
           
           {/* Main Navigation - Mobile responsive */}
           <div className="flex flex-wrap gap-2 sm:gap-4 justify-center">

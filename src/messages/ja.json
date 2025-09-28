@@ -1,4 +1,7 @@
 {
+  "common": {
+    "siteTitle": "ウケイのお部屋"
+  },
   "navigation": {
     "home": "ホーム",
     "profile": "プロフィール",
