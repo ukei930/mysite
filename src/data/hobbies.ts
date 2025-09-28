@@ -40,7 +40,7 @@ export const hobbiesData: LocaleData<HobbiesData> = {
       { category: "食物", item: "软糖", icon: "🍬" },
       { category: "电车", item: "半藏门线", icon: "🚇" },
       { category: "老师", item: "竹内老师", icon: "👨‍🏫" },
-      { category: "零食", item: "黄瓜片", icon: "🥒" },
+      { category: "零食", item: "黄瓜薯片", icon: "🥒" },
       { category: "颜色", item: "粉色", icon: "🩷" },
       { category: "动物", item: "小鱼和七七", icon: "🐱" },
       { category: "运动", item: "游泳", icon: "🏊‍♀️" },
