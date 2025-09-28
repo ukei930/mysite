@@ -1,9 +1,13 @@
-const withNextIntl = require('next-intl/plugin')();
+const withNextIntl = require('next-intl/plugin')('./i18n/request.ts');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    appDir: true,
+  env: {
+    _next_intl_trailing_slash: 'false'
+  },
+  images: {
+    domains: [],
+    formats: ['image/webp', 'image/avif'],
   },
 };
 

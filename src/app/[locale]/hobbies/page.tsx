@@ -1,4 +1,5 @@
-import {useTranslations, setRequestLocale} from 'next-intl';
+import {useTranslations} from 'next-intl';
+import {setRequestLocale} from 'next-intl/server';
 import Link from 'next/link';
 import { hobbiesData } from '@/data/hobbies';
 import { Locale } from '@/types';
@@ -9,53 +10,77 @@ export default function HobbiesPage({params: {locale}}: {params: {locale: Locale
   const hobbies = hobbiesData[locale];
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto px-4 py-4 sm:py-8">
       {/* Navigation */}
-      <nav className="flex justify-between items-center mb-12">
-        <div className="text-2xl font-bold text-pink-600">💕 Ukei&apos;s Room</div>
-        <div className="flex gap-4">
-          <Link href={`/${locale}`} className="cute-button">
+      <nav className="flex flex-col sm:flex-row justify-between items-center mb-8 sm:mb-12 gap-4">
+        <div className="text-xl sm:text-2xl font-bold text-pink-600">💕 Ukei&apos;s Room</div>
+        
+        {/* Main Navigation - Mobile responsive */}
+        <div className="flex flex-wrap gap-2 sm:gap-4 justify-center">
+          <Link href={`/${locale}`} className="cute-button text-sm sm:text-base px-4 py-2">
             {t('navigation.home')}
           </Link>
-          <Link href={`/${locale}/profile`} className="cute-button">
+          <Link href={`/${locale}/profile`} className="cute-button text-sm sm:text-base px-4 py-2">
             {t('navigation.profile')}
           </Link>
-          <Link href={`/${locale}/hobbies`} className="cute-button bg-pink-600">
+          <Link href={`/${locale}/hobbies`} className="cute-button bg-pink-600 text-sm sm:text-base px-4 py-2">
             {t('navigation.hobbies')}
           </Link>
         </div>
-        {/* Language Switcher */}
-        <div className="flex gap-2">
-          <Link href="/ja/hobbies" className={`px-3 py-1 rounded-full text-sm ${locale === 'ja' ? 'bg-pink-500 text-white' : 'bg-white text-pink-500'}`}>
-            🇯🇵 日本語
+        
+        {/* Language Switcher - Mobile responsive */}
+        <div className="flex flex-wrap gap-1 sm:gap-2 justify-center">
+          <Link 
+            href="/ja/hobbies" 
+            className={`px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm transition-colors ${
+              locale === 'ja' 
+                ? 'bg-pink-500 text-white' 
+                : 'bg-white text-pink-500 hover:bg-pink-100'
+            }`}
+          >
+            日本語
           </Link>
-          <Link href="/en/hobbies" className={`px-3 py-1 rounded-full text-sm ${locale === 'en' ? 'bg-pink-500 text-white' : 'bg-white text-pink-500'}`}>
-            🇺🇸 English
+          <Link 
+            href="/en/hobbies" 
+            className={`px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm transition-colors ${
+              locale === 'en' 
+                ? 'bg-pink-500 text-white' 
+                : 'bg-white text-pink-500 hover:bg-pink-100'
+            }`}
+          >
+            English
           </Link>
-          <Link href="/zh/hobbies" className={`px-3 py-1 rounded-full text-sm ${locale === 'zh' ? 'bg-pink-500 text-white' : 'bg-white text-pink-500'}`}>
-            🇨🇳 中文
+          <Link 
+            href="/zh/hobbies" 
+            className={`px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm transition-colors ${
+              locale === 'zh' 
+                ? 'bg-pink-500 text-white' 
+                : 'bg-white text-pink-500 hover:bg-pink-100'
+            }`}
+          >
+            中文
           </Link>
         </div>
       </nav>
 
       {/* Page Header */}
-      <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-pink-600 mb-4">
+      <div className="text-center mb-8 sm:mb-12">
+        <h1 className="text-3xl sm:text-4xl font-bold text-pink-600 mb-4">
           {t('hobbies.title')} 🎀
         </h1>
-        <p className="text-xl text-pink-500">{t('hobbies.intro')}</p>
+        <p className="text-lg sm:text-xl text-pink-500 px-4">{t('hobbies.intro')}</p>
       </div>
 
       {/* Special Skills */}
-      <div className="mb-12">
-        <div className="card-cute p-8 text-center">
-          <h2 className="text-3xl font-bold text-pink-600 mb-6 flex items-center justify-center">
-            <span className="mr-3">✨</span>
+      <div className="mb-8 sm:mb-12">
+        <div className="card-cute p-6 sm:p-8 text-center">
+          <h2 className="text-2xl sm:text-3xl font-bold text-pink-600 mb-4 sm:mb-6 flex items-center justify-center">
+            <span className="mr-2 sm:mr-3">✨</span>
             {t('hobbies.skills')}
           </h2>
-          <div className="flex flex-wrap gap-4 justify-center">
+          <div className="flex flex-wrap gap-2 sm:gap-4 justify-center">
             {hobbies.skills.map((skill, index) => (
-              <div key={index} className="bg-gradient-to-r from-pink-400 to-purple-400 text-white px-6 py-3 rounded-full text-xl font-bold shadow-lg transform hover:scale-105 transition-all duration-300">
+              <div key={index} className="bg-gradient-to-r from-pink-400 to-purple-400 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full text-base sm:text-xl font-bold shadow-lg transform hover:scale-105 transition-all duration-300">
                 {skill} 💖
               </div>
             ))}
@@ -64,15 +89,15 @@ export default function HobbiesPage({params: {locale}}: {params: {locale: Locale
       </div>
 
       {/* Hobbies */}
-      <div className="mb-12">
-        <div className="card-cute p-8 text-center">
-          <h2 className="text-3xl font-bold text-pink-600 mb-6 flex items-center justify-center">
-            <span className="mr-3">🎯</span>
+      <div className="mb-8 sm:mb-12">
+        <div className="card-cute p-6 sm:p-8 text-center">
+          <h2 className="text-2xl sm:text-3xl font-bold text-pink-600 mb-4 sm:mb-6 flex items-center justify-center">
+            <span className="mr-2 sm:mr-3">🎯</span>
             {t('hobbies.hobbies')}
           </h2>
-          <div className="flex flex-wrap gap-4 justify-center">
+          <div className="flex flex-wrap gap-2 sm:gap-4 justify-center">
             {hobbies.hobbies.map((hobby, index) => (
-              <div key={index} className="bg-gradient-to-r from-purple-400 to-pink-400 text-white px-6 py-3 rounded-full text-xl font-bold shadow-lg transform hover:scale-105 transition-all duration-300">
+              <div key={index} className="bg-gradient-to-r from-purple-400 to-pink-400 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full text-base sm:text-xl font-bold shadow-lg transform hover:scale-105 transition-all duration-300">
                 📺 {hobby}
               </div>
             ))}
@@ -80,83 +105,52 @@ export default function HobbiesPage({params: {locale}}: {params: {locale: Locale
         </div>
       </div>
 
-      {/* Favorites Grid */}
-      <div className="mb-12">
-        <h2 className="text-3xl font-bold text-pink-600 mb-8 text-center flex items-center justify-center">
-          <span className="mr-3">💕</span>
-          {t('hobbies.favorites')}
-        </h2>
-        
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {hobbies.favorites.map((favorite, index) => (
-            <div key={index} className="card-cute p-6 text-center transform hover:scale-105 transition-all duration-300 hover:shadow-xl">
-              <div className="text-4xl mb-4">{favorite.icon}</div>
-              <h3 className="text-lg font-semibold text-pink-600 mb-2">{favorite.category}</h3>
-              <p className="text-gray-700 font-medium">{favorite.item}</p>
-            </div>
-          ))}
+      {/* Favorites */}
+      <div className="mb-8 sm:mb-12">
+        <div className="card-cute p-6 sm:p-8">
+          <h2 className="text-2xl sm:text-3xl font-bold text-pink-600 mb-4 sm:mb-6 text-center flex items-center justify-center">
+            <span className="mr-2 sm:mr-3">💖</span>
+            {t('hobbies.favorites')}
+          </h2>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
+            {hobbies.favorites.map((favorite, index) => (
+              <div key={index} className="bg-gradient-to-br from-pink-100 to-purple-100 p-4 sm:p-6 rounded-2xl transform hover:scale-105 transition-all duration-300 hover:shadow-xl">
+                <div className="text-3xl sm:text-4xl mb-3 sm:mb-4 text-center">{favorite.icon}</div>
+                <h3 className="text-base sm:text-lg font-bold text-pink-600 mb-2 text-center">{favorite.category}</h3>
+                <p className="text-sm sm:text-base text-gray-700 font-medium text-center">{favorite.item}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
       {/* Dislikes */}
-      <div className="mb-12">
-        <div className="card-cute p-8 text-center">
-          <h2 className="text-3xl font-bold text-pink-600 mb-6 flex items-center justify-center">
-            <span className="mr-3">😤</span>
+      <div className="mb-8 sm:mb-12">
+        <div className="card-cute p-6 sm:p-8 text-center">
+          <h2 className="text-2xl sm:text-3xl font-bold text-pink-600 mb-4 sm:mb-6 flex items-center justify-center">
+            <span className="mr-2 sm:mr-3">😤</span>
             {t('hobbies.dislikes')}
           </h2>
-          <div className="flex flex-wrap gap-4 justify-center">
+          <div className="flex flex-wrap gap-2 sm:gap-4 justify-center">
             {hobbies.dislikes.map((dislike, index) => (
-              <div key={index} className="bg-gradient-to-r from-red-400 to-pink-400 text-white px-6 py-3 rounded-full text-xl font-bold shadow-lg transform hover:scale-105 transition-all duration-300 relative">
-                🚫 {dislike}
-                <div className="absolute -top-2 -right-2 text-2xl animate-bounce">💢</div>
+              <div key={index} className="bg-gradient-to-r from-gray-400 to-gray-500 text-white px-4 sm:px-6 py-2 sm:py-3 rounded-full text-base sm:text-xl font-bold shadow-lg">
+                ❌ {dislike}
               </div>
             ))}
-          </div>
-          <p className="text-gray-600 mt-4 text-sm">{t('hobbies.dislikesNote')}</p>
-        </div>
-      </div>
-
-      {/* Fun Facts */}
-      <div className="mb-12">
-        <div className="card-cute p-8">
-          <h2 className="text-3xl font-bold text-pink-600 mb-6 text-center flex items-center justify-center">
-            <span className="mr-3">🎪</span>
-            {t('hobbies.funFacts')}
-          </h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-pink-50 p-4 rounded-xl">
-              <h3 className="text-lg font-semibold text-pink-600 mb-2">🚇 {t('hobbies.trainLover')}</h3>
-              <p className="text-gray-700">{t('hobbies.trainDescription')}</p>
-            </div>
-            <div className="bg-purple-50 p-4 rounded-xl">
-              <h3 className="text-lg font-semibold text-purple-600 mb-2">🥒 {t('hobbies.uniqueTaste')}</h3>
-              <p className="text-gray-700">{t('hobbies.uniqueDescription')}</p>
-            </div>
-            <div className="bg-yellow-50 p-4 rounded-xl">
-              <h3 className="text-lg font-semibold text-yellow-600 mb-2">🏊‍♀️ {t('hobbies.sports')}</h3>
-              <p className="text-gray-700">{t('hobbies.sportsDescription')}</p>
-            </div>
-            <div className="bg-green-50 p-4 rounded-xl">
-              <h3 className="text-lg font-semibold text-green-600 mb-2">🗾 {t('hobbies.travel')}</h3>
-              <p className="text-gray-700">{t('hobbies.travelDescription')}</p>
-            </div>
           </div>
         </div>
       </div>
 
       {/* Navigation to other pages */}
       <div className="text-center">
-        <div className="card-cute p-6">
-          <h3 className="text-xl font-bold text-pink-600 mb-4">{t('hobbies.otherPages')}</h3>
-          <div className="flex gap-4 justify-center">
-            <Link href={`/${locale}`} className="cute-button">
-              {t('hobbies.backToHome')}
-            </Link>
-            <Link href={`/${locale}/profile`} className="cute-button">
-              {t('hobbies.viewProfile')}
-            </Link>
-          </div>
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+          <Link href={`/${locale}`} className="cute-button text-sm sm:text-base px-6 py-3">
+            ← {t('navigation.backHome')}
+          </Link>
+          <Link href={`/${locale}/profile`} className="cute-button text-sm sm:text-base px-6 py-3">
+            {t('navigation.viewProfile')} →
+          </Link>
         </div>
       </div>
     </div>

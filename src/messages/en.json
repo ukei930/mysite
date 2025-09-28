@@ -2,19 +2,29 @@
   "navigation": {
     "home": "Home",
     "profile": "Profile",
-    "hobbies": "Hobbies"
+    "hobbies": "Hobbies",
+    "viewProfile": "View Profile",
+    "viewHobbies": "View Hobbies",
+    "backHome": "Back to Home"
   },
   "home": {
     "title": "Welcome to Chin Ukei's Room!",
     "subtitle": "A cute girl from Shanghai, living in Jimbocho 💕",
     "welcome": "Hello! Thank you for visiting my site!",
+    "intro": "Hello! Thank you for visiting my site!",
+    "basicInfo": "Basic Information",
     "moreInfo": "Want to know more? 💕",
     "moreInfoDesc": "Check out my profile and hobbies for more details!",
     "viewProfile": "View Profile 👤",
-    "viewHobbies": "View Hobbies 🎀"
+    "viewHobbies": "View Hobbies 🎀",
+    "exploreMore": "Explore More",
+    "exploreDescription": "Learn more about me!",
+    "hobbies": "Hobbies",
+    "hobbiesPreview": "I have many interesting hobbies!"
   },
   "profile": {
     "title": "Profile",
+    "intro": "Welcome to learn more about me!",
     "basicInfo": "Basic Information",
     "name": "Name",
     "gender": "Gender",

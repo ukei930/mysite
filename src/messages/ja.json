@@ -2,19 +2,29 @@
   "navigation": {
     "home": "ホーム",
     "profile": "プロフィール",
-    "hobbies": "趣味・嗜好"
+    "hobbies": "趣味・嗜好",
+    "viewProfile": "プロフィールを見る",
+    "viewHobbies": "趣味を見る",
+    "backHome": "ホームに戻る"
   },
   "home": {
     "title": "チンウケイのお部屋へようこそ！",
     "subtitle": "上海出身、神保町在住の可愛い女の子です💕",
     "welcome": "こんにちは！私のサイトに来てくれてありがとう！",
+    "intro": "こんにちは！私のサイトに来てくれてありがとう！",
+    "basicInfo": "基本情報",
     "moreInfo": "もっと知りたい？ 💕",
     "moreInfoDesc": "私のプロフィールや趣味について詳しく見てみてね！",
     "viewProfile": "プロフィールを見る 👤",
-    "viewHobbies": "趣味を見る 🎀"
+    "viewHobbies": "趣味を見る 🎀",
+    "exploreMore": "もっと探索",
+    "exploreDescription": "私についてもっと知ってね！",
+    "hobbies": "趣味・嗜好",
+    "hobbiesPreview": "私の趣味はとても豊富だよ！"
   },
   "profile": {
     "title": "プロフィール",
+    "intro": "私の詳しい情報をご紹介します！",
     "basicInfo": "基本情報",
     "name": "名前",
     "gender": "性別",

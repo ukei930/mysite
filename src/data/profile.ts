@@ -14,7 +14,7 @@ export const profileData: LocaleData<ProfileData> = {
       { language: "フランス語", level: "初級", description: "挨拶" },
       { language: "韓国語", level: "初級", description: "悪口" }
     ],
-    profileImage: "/images/profile-placeholder.jpg"
+    profileImage: "/images/ukei-profile.jpg"
   },
   en: {
     name: "Chen Yuxin",
@@ -29,7 +29,7 @@ export const profileData: LocaleData<ProfileData> = {
       { language: "French", level: "Beginner", description: "Greetings" },
       { language: "Korean", level: "Beginner", description: "Swear words" }
     ],
-    profileImage: "/images/profile-placeholder.jpg"
+    profileImage: "/images/ukei-profile.jpg"
   },
   zh: {
     name: "陈羽馨",
@@ -44,6 +44,6 @@ export const profileData: LocaleData<ProfileData> = {
       { language: "法语", level: "初级", description: "问候" },
       { language: "韩语", level: "初级", description: "骂人" }
     ],
-    profileImage: "/images/profile-placeholder.jpg"
+    profileImage: "/images/ukei-profile.jpg"
   }
 };

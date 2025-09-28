@@ -2,19 +2,29 @@
   "navigation": {
     "home": "首页",
     "profile": "个人资料",
-    "hobbies": "兴趣爱好"
+    "hobbies": "兴趣爱好",
+    "viewProfile": "查看个人资料",
+    "viewHobbies": "查看兴趣爱好",
+    "backHome": "返回首页"
   },
   "home": {
     "title": "欢迎来到陈雨桂的小屋！",
     "subtitle": "来自上海，现居神保町的可爱女孩 💕",
     "welcome": "你好！感谢你访问我的网站！",
+    "intro": "你好！感谢你访问我的网站！",
+    "basicInfo": "基本信息",
     "moreInfo": "想了解更多？ 💕",
     "moreInfoDesc": "查看我的个人资料和兴趣爱好吧！",
     "viewProfile": "查看个人资料 👤",
-    "viewHobbies": "查看兴趣爱好 🎀"
+    "viewHobbies": "查看兴趣爱好 🎀",
+    "exploreMore": "探索更多",
+    "exploreDescription": "了解更多关于我的信息吧！",
+    "hobbies": "兴趣爱好",
+    "hobbiesPreview": "我的兴趣爱好很丰富哦！"
   },
   "profile": {
     "title": "个人资料",
+    "intro": "欢迎了解我的详细信息！",
     "basicInfo": "基本信息",
     "name": "姓名",
     "gender": "性别",
