@@ -10,10 +10,14 @@ export default function HobbiesPage({params: {locale}}: {params: {locale: Locale
   const hobbies = hobbiesData[locale];
 
   return (
-    <div className="container mx-auto px-4 py-4 sm:py-8">
-      {/* Navigation */}
-      <nav className="flex flex-col sm:flex-row justify-between items-center mb-8 sm:mb-12 gap-4">
-        <div className="text-xl sm:text-2xl font-bold text-pink-600">💕 Ukei&apos;s Room</div>
+    <div className="min-h-screen bg-gradient-to-br from-pink-100 via-purple-50 to-pink-200">
+      <div className="floating-hearts"></div>
+      <div className="magical-sparkles"></div>
+      
+      <div className="container mx-auto px-4 py-4 sm:py-8">
+        {/* Navigation */}
+        <nav className="flex flex-col sm:flex-row justify-between items-center mb-8 sm:mb-12 gap-4">
+          <div className="text-xl sm:text-2xl font-bold rainbow-text magical-glow">💕 Ukei&apos;s Room</div>
         
         {/* Main Navigation - Mobile responsive */}
         <div className="flex flex-wrap gap-2 sm:gap-4 justify-center">
@@ -65,10 +69,10 @@ export default function HobbiesPage({params: {locale}}: {params: {locale: Locale
 
       {/* Page Header */}
       <div className="text-center mb-8 sm:mb-12">
-        <h1 className="text-3xl sm:text-4xl font-bold text-pink-600 mb-4">
+        <h1 className="text-3xl sm:text-4xl font-bold rainbow-text magical-glow mb-4">
           {t('hobbies.title')} 🎀
         </h1>
-        <p className="text-lg sm:text-xl text-pink-500 px-4">{t('hobbies.intro')}</p>
+        <p className="text-lg sm:text-xl text-pink-500 kawaii-border p-4 bg-white/70 backdrop-blur-sm rounded-3xl shadow-lg mx-2">{t('hobbies.intro')}</p>
       </div>
 
       {/* Special Skills */}
@@ -153,6 +157,7 @@ export default function HobbiesPage({params: {locale}}: {params: {locale: Locale
           </Link>
         </div>
       </div>
+    </div>
     </div>
   );
 }

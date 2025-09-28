@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Comfortaa:wght@300;400;500;700&display=swap');
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -21,19 +21,42 @@
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+      135deg,
+      #ffeef8 0%,
+      #f0e6ff 25%,
+      #e6f3ff 50%,
+      #fff0f5 75%,
+      #ffeef8 100%
+    );
+  min-height: 100vh;
+  font-family: 'Comfortaa', 'Noto Sans JP', sans-serif;
 }
 
 .cute-button {
-  @apply bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl;
+  @apply bg-gradient-to-r from-pink-400 via-pink-500 to-purple-500 hover:from-pink-500 hover:via-purple-500 hover:to-pink-600 text-white font-bold py-3 px-6 rounded-full transition-all duration-500 transform hover:scale-110 shadow-lg hover:shadow-2xl;
+  box-shadow: 0 8px 32px rgba(236, 72, 153, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.cute-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: left 0.5s;
+}
+
+.cute-button:hover::before {
+  left: 100%;
 }
 
 .card-cute {
-  @apply bg-white/80 backdrop-blur-sm rounded-3xl shadow-xl border border-pink-200 hover:shadow-2xl transition-all duration-300 transform hover:scale-[1.02];
+  @apply bg-gradient-to-br from-white/90 via-pink-50/80 to-purple-50/80 backdrop-blur-lg rounded-3xl shadow-2xl border-2 border-pink-200/50 hover:shadow-pink-200/50 transition-all duration-500 transform hover:scale-[1.05] hover:-translate-y-2;
+  box-shadow: 0 20px 60px rgba(236, 72, 153, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.1);
 }
 
 .floating-hearts {
@@ -44,40 +67,136 @@ body {
   height: 100%;
   pointer-events: none;
   z-index: -1;
+  overflow: hidden;
 }
 
 .floating-hearts::before {
   content: '💕';
   position: absolute;
-  animation: float 6s ease-in-out infinite;
-  font-size: 2rem;
-  opacity: 0.3;
+  animation: float-hearts 8s ease-in-out infinite;
+  font-size: 2.5rem;
+  opacity: 0.4;
+  top: 10%;
+  left: 10%;
 }
 
 .floating-hearts::after {
   content: '🌸';
   position: absolute;
-  animation: float 8s ease-in-out infinite reverse;
-  font-size: 1.5rem;
-  opacity: 0.2;
-  animation-delay: -2s;
+  animation: float-sakura 10s ease-in-out infinite reverse;
+  font-size: 2rem;
+  opacity: 0.3;
+  animation-delay: -3s;
+  top: 20%;
+  right: 15%;
 }
 
-@keyframes float {
+/* 追加の装飾要素 */
+.magical-sparkles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.magical-sparkles::before {
+  content: '✨';
+  position: absolute;
+  animation: sparkle-dance 6s ease-in-out infinite;
+  font-size: 1.5rem;
+  opacity: 0.6;
+  top: 30%;
+  left: 70%;
+}
+
+.magical-sparkles::after {
+  content: '🦄';
+  position: absolute;
+  animation: unicorn-float 12s ease-in-out infinite;
+  font-size: 1.8rem;
+  opacity: 0.2;
+  animation-delay: -5s;
+  bottom: 20%;
+  left: 20%;
+}
+
+@keyframes float-hearts {
   0%, 100% {
-    transform: translateY(0px) rotate(0deg);
-    opacity: 0.3;
+    transform: translateY(0px) rotate(0deg) scale(1);
+    opacity: 0.4;
+  }
+  25% {
+    transform: translateY(-30px) rotate(90deg) scale(1.1);
+    opacity: 0.6;
   }
   50% {
-    transform: translateY(-20px) rotate(180deg);
-    opacity: 0.1;
+    transform: translateY(-15px) rotate(180deg) scale(0.9);
+    opacity: 0.3;
   }
+  75% {
+    transform: translateY(-25px) rotate(270deg) scale(1.05);
+    opacity: 0.5;
+  }
+}
+
+@keyframes float-sakura {
+  0%, 100% {
+    transform: translateX(0px) translateY(0px) rotate(0deg);
+    opacity: 0.3;
+  }
+  33% {
+    transform: translateX(20px) translateY(-20px) rotate(120deg);
+    opacity: 0.5;
+  }
+  66% {
+    transform: translateX(-15px) translateY(-10px) rotate(240deg);
+    opacity: 0.2;
+  }
+}
+
+@keyframes sparkle-dance {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.3) rotate(180deg);
+    opacity: 0.9;
+  }
+}
+
+@keyframes unicorn-float {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px);
+    opacity: 0.2;
+  }
+  50% {
+    transform: translateY(-40px) translateX(30px);
+    opacity: 0.4;
+  }
+}
+
+/* パルス効果 */
+@keyframes magical-pulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(236, 72, 153, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(147, 51, 234, 0.5);
+  }
+}
+
+.magical-glow {
+  animation: magical-pulse 3s ease-in-out infinite;
 }
 
 /* レスポンシブデザインの改善 */
 @media (max-width: 640px) {
   .cute-button {
-    @apply text-sm px-3 py-2;
+    @apply text-sm px-4 py-2;
   }
   
   .card-cute {
@@ -87,61 +206,297 @@ body {
   /* モバイルでのテキストサイズ調整 */
   h1 {
     @apply text-2xl;
+    text-shadow: 2px 2px 4px rgba(236, 72, 153, 0.3);
   }
   
   h2 {
     @apply text-xl;
+    text-shadow: 1px 1px 2px rgba(236, 72, 153, 0.2);
   }
   
   h3 {
     @apply text-lg;
-  }
-  
-  /* モバイルでのナビゲーション調整 */
-  nav {
-    @apply flex-col gap-3;
-  }
-  
-  /* モバイルでのグリッド調整 */
-  .grid {
-    @apply gap-3;
+    text-shadow: 1px 1px 2px rgba(236, 72, 153, 0.1);
   }
 }
 
-@media (max-width: 480px) {
-  .container {
-    @apply px-2;
+/* デスクトップでの文字装飾 */
+@media (min-width: 641px) {
+  h1 {
+    text-shadow: 3px 3px 6px rgba(236, 72, 153, 0.4);
   }
   
-  .cute-button {
-    @apply text-xs px-2 py-1;
+  h2 {
+    text-shadow: 2px 2px 4px rgba(236, 72, 153, 0.3);
   }
   
-  .card-cute {
-    @apply p-3 rounded-2xl;
-  }
-  
-  /* 非常に小さな画面での調整 */
-  .floating-hearts::before,
-  .floating-hearts::after {
-    font-size: 1rem;
+  h3 {
+    text-shadow: 1px 1px 3px rgba(236, 72, 153, 0.2);
   }
 }
 
-/* タブレット表示の最適化 */
-@media (min-width: 641px) and (max-width: 1024px) {
-  .container {
-    @apply px-6;
+/* 虹色グラデーション効果 */
+.rainbow-text {
+  background: linear-gradient(45deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3, #54a0ff);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: rainbow-shift 4s ease-in-out infinite;
+}
+
+@keyframes rainbow-shift {
+  0%, 100% {
+    background-position: 0% 50%;
   }
-  
-  .grid {
-    @apply gap-4;
+  50% {
+    background-position: 100% 50%;
   }
 }
 
-/* 大画面での最適化 */
-@media (min-width: 1025px) {
-  .container {
-    @apply max-w-6xl;
+/* 可愛いボーダー効果 */
+.kawaii-border {
+  border: 3px solid;
+  border-image: linear-gradient(45deg, #ff6b9d, #c44569, #f8b500, #ff9ff3) 1;
+  border-radius: 20px;
+}
+
+/* 可愛いフォントスタイル */
+.fairy-text {
+  font-family: 'Comfortaa', cursive;
+  letter-spacing: 0.5px;
+  text-shadow: 2px 2px 4px rgba(236, 72, 153, 0.2);
+}
+
+.dreamy-text {
+  background: linear-gradient(135deg, #ff6b9d, #c44569, #f8b500, #ff9ff3, #54a0ff);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: dreamy-flow 6s ease-in-out infinite;
+  font-weight: 600;
+}
+
+@keyframes dreamy-flow {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 100% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  75% {
+    background-position: 0% 100%;
+  }
+}
+
+/* 可愛いボタンの改善 */
+.cute-button {
+  @apply bg-gradient-to-r from-pink-400 to-purple-400 text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300;
+  font-family: 'Comfortaa', cursive;
+  letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.cute-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s;
+}
+
+.cute-button:hover::before {
+  left: 100%;
+}
+
+/* カードの改善 */
+.card-cute {
+  @apply bg-white/80 backdrop-blur-sm p-6 rounded-3xl shadow-xl border border-pink-200;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-cute::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 182, 193, 0.1) 0%, transparent 70%);
+  animation: card-shimmer 8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes card-shimmer {
+  0%, 100% {
+    transform: rotate(0deg) scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: rotate(180deg) scale(1.1);
+    opacity: 0.1;
+  }
+}
+
+/* 可愛い見出しスタイル */
+h1, h2, h3 {
+  font-family: 'Comfortaa', cursive;
+  letter-spacing: 1px;
+}
+
+/* 特別な装飾テキスト */
+.sparkle-text {
+  position: relative;
+  display: inline-block;
+}
+
+.sparkle-text::before,
+.sparkle-text::after {
+  content: '✨';
+  position: absolute;
+  font-size: 0.8em;
+  animation: sparkle-twinkle 2s ease-in-out infinite;
+}
+
+.sparkle-text::before {
+  top: -10px;
+  left: -15px;
+  animation-delay: 0s;
+}
+
+.sparkle-text::after {
+  bottom: -10px;
+  right: -15px;
+  animation-delay: 1s;
+}
+
+@keyframes sparkle-twinkle {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+/* ハート装飾 */
+.heart-decoration {
+  position: relative;
+}
+
+.heart-decoration::before {
+  content: '💕';
+  position: absolute;
+  top: -5px;
+  right: -20px;
+  font-size: 0.8em;
+  animation: heart-beat 2s ease-in-out infinite;
+}
+
+@keyframes heart-beat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+/* 星座装飾 */
+.constellation {
+  position: relative;
+}
+
+.constellation::before {
+  content: '⭐';
+  position: absolute;
+  top: -8px;
+  left: -15px;
+  font-size: 0.7em;
+  animation: star-twinkle 3s ease-in-out infinite;
+}
+
+.constellation::after {
+  content: '🌟';
+  position: absolute;
+  bottom: -8px;
+  right: -15px;
+  font-size: 0.6em;
+  animation: star-twinkle 3s ease-in-out infinite reverse;
+  animation-delay: 1.5s;
+}
+
+@keyframes star-twinkle {
+  0%, 100% {
+    opacity: 0.4;
+    transform: rotate(0deg) scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: rotate(180deg) scale(1.1);
+  }
+}
+
+/* 花装飾 */
+.flower-decoration {
+  position: relative;
+}
+
+.flower-decoration::before {
+  content: '🌸';
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.9em;
+  animation: flower-sway 4s ease-in-out infinite;
+}
+
+@keyframes flower-sway {
+  0%, 100% {
+    transform: translateX(-50%) rotate(-5deg);
+  }
+  50% {
+    transform: translateX(-50%) rotate(5deg);
+  }
+}
+
+/* 蝶々装飾 */
+.butterfly-decoration {
+  position: relative;
+}
+
+.butterfly-decoration::after {
+  content: '🦋';
+  position: absolute;
+  top: -5px;
+  right: -25px;
+  font-size: 0.8em;
+  animation: butterfly-flutter 5s ease-in-out infinite;
+}
+
+@keyframes butterfly-flutter {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-10px) rotate(5deg);
+  }
+  50% {
+    transform: translateY(-5px) rotate(-3deg);
+  }
+  75% {
+    transform: translateY(-15px) rotate(8deg);
   }
 }

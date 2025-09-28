@@ -13,6 +13,7 @@ export default function HomePage({params: {locale}}: {params: {locale: Locale}})
   return (
     <div className="min-h-screen bg-gradient-to-br from-pink-100 via-purple-50 to-pink-200">
       <div className="floating-hearts"></div>
+      <div className="magical-sparkles"></div>
       
       <div className="container mx-auto px-4 py-4 sm:py-8">
         {/* Navigation */}
@@ -82,7 +83,7 @@ export default function HomePage({params: {locale}}: {params: {locale: Locale}})
             </div>
           </div>
           
-          <h1 className="text-3xl sm:text-5xl font-bold text-pink-600 mb-4 sm:mb-6">
+          <h1 className="text-3xl sm:text-5xl font-bold rainbow-text mb-4 sm:mb-6 magical-glow">
             {t('home.welcome')} 🎀
           </h1>
           
@@ -90,10 +91,6 @@ export default function HomePage({params: {locale}}: {params: {locale: Locale}})
             <p className="font-bold">{profile.name}</p>
             <p className="text-base sm:text-xl">{t('home.subtitle')}</p>
           </div>
-          
-          <p className="text-base sm:text-xl text-gray-700 max-w-2xl mx-auto leading-relaxed px-4">
-            {t('home.intro')}
-          </p>
         </div>
 
         {/* Profile Overview Cards */}
