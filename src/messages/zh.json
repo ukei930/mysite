@@ -1,0 +1,69 @@
+{
+  "navigation": {
+    "home": "首页",
+    "profile": "个人资料",
+    "hobbies": "兴趣爱好"
+  },
+  "home": {
+    "title": "欢迎来到陈雨桂的小屋！",
+    "subtitle": "来自上海，现居神保町的可爱女孩 💕",
+    "welcome": "你好！感谢你访问我的网站！"
+  },
+  "profile": {
+    "title": "个人资料",
+    "basicInfo": "基本信息",
+    "name": "姓名",
+    "gender": "性别",
+    "birthPlace": "出生地",
+    "nationality": "国籍",
+    "residence": "居住地",
+    "languages": "使用语言",
+    "languageSkills": {
+      "chinese": "中文",
+      "japanese": "日语",
+      "english": "英语",
+      "french": "法语",
+      "korean": "韩语",
+      "native": "母语",
+      "fluent": "流利",
+      "intermediate": "中级",
+      "beginner": "初级",
+      "greetings": "问候",
+      "swearWords": "骂人"
+    }
+  },
+  "hobbies": {
+    "title": "兴趣爱好",
+    "favorites": "喜欢的",
+    "skills": "特长",
+    "hobbies": "爱好",
+    "dislikes": "讨厌的",
+    "categories": {
+      "food": "食物",
+      "train": "电车",
+      "teacher": "老师",
+      "snack": "零食",
+      "color": "颜色",
+      "animal": "动物",
+      "sport": "运动",
+      "place": "地方",
+      "drink": "酒类",
+      "day": "星期"
+    },
+    "items": {
+      "gummy": "软糖",
+      "hanzomon": "半藏门线",
+      "takeuchi": "竹内老师",
+      "cucumber": "黄瓜片",
+      "pink": "粉色",
+      "fish": "小鱼和七七",
+      "swimming": "游泳",
+      "hokkaido": "北海道",
+      "rum": "朗姆酒",
+      "sunday": "星期天",
+      "cute": "超级可爱",
+      "tv": "看电视",
+      "mosquito": "蚊子"
+    }
+  }
+}

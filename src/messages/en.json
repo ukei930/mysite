@@ -1,0 +1,69 @@
+{
+  "navigation": {
+    "home": "Home",
+    "profile": "Profile",
+    "hobbies": "Hobbies"
+  },
+  "home": {
+    "title": "Welcome to Chin Ukei's Room!",
+    "subtitle": "A cute girl from Shanghai, living in Jimbocho 💕",
+    "welcome": "Hello! Thank you for visiting my site!"
+  },
+  "profile": {
+    "title": "Profile",
+    "basicInfo": "Basic Information",
+    "name": "Name",
+    "gender": "Gender",
+    "birthPlace": "Birth Place",
+    "nationality": "Nationality",
+    "residence": "Residence",
+    "languages": "Languages",
+    "languageSkills": {
+      "chinese": "Chinese",
+      "japanese": "Japanese",
+      "english": "English",
+      "french": "French",
+      "korean": "Korean",
+      "native": "Native",
+      "fluent": "Fluent",
+      "intermediate": "Intermediate",
+      "beginner": "Beginner",
+      "greetings": "Greetings",
+      "swearWords": "Swear words"
+    }
+  },
+  "hobbies": {
+    "title": "Hobbies & Preferences",
+    "favorites": "Favorites",
+    "skills": "Special Skills",
+    "hobbies": "Hobbies",
+    "dislikes": "Dislikes",
+    "categories": {
+      "food": "Food",
+      "train": "Train",
+      "teacher": "Teacher",
+      "snack": "Snack",
+      "color": "Color",
+      "animal": "Animal",
+      "sport": "Sport",
+      "place": "Place",
+      "drink": "Drink",
+      "day": "Day"
+    },
+    "items": {
+      "gummy": "Gummy",
+      "hanzomon": "Hanzomon Line",
+      "takeuchi": "Takeuchi Sensei",
+      "cucumber": "Cucumber Chips",
+      "pink": "Pink",
+      "fish": "Small Fish & Nana",
+      "swimming": "Swimming",
+      "hokkaido": "Hokkaido",
+      "rum": "Rum",
+      "sunday": "Sunday",
+      "cute": "Super Cute",
+      "tv": "Watching TV",
+      "mosquito": "Mosquito"
+    }
+  }
+}
