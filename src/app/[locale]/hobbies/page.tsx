@@ -42,7 +42,7 @@ export default function HobbiesPage({params: {locale}}: {params: {locale: Locale
         <h1 className="text-4xl font-bold text-pink-600 mb-4">
           {t('hobbies.title')} 🎀
         </h1>
-        <p className="text-xl text-pink-500">私の好きなものや趣味を紹介するよ！</p>
+        <p className="text-xl text-pink-500">{t('hobbies.intro')}</p>
       </div>
 
       {/* Special Skills */}
@@ -112,7 +112,7 @@ export default function HobbiesPage({params: {locale}}: {params: {locale: Locale
               </div>
             ))}
           </div>
-          <p className="text-gray-600 mt-4 text-sm">蚊は本当に嫌い！でも他は大体好き💕</p>
+          <p className="text-gray-600 mt-4 text-sm">{t('hobbies.dislikesNote')}</p>
         </div>
       </div>
 
@@ -121,24 +121,24 @@ export default function HobbiesPage({params: {locale}}: {params: {locale: Locale
         <div className="card-cute p-8">
           <h2 className="text-3xl font-bold text-pink-600 mb-6 text-center flex items-center justify-center">
             <span className="mr-3">🎪</span>
-            Fun Facts about Ukei
+            {t('hobbies.funFacts')}
           </h2>
           <div className="grid md:grid-cols-2 gap-6">
             <div className="bg-pink-50 p-4 rounded-xl">
-              <h3 className="text-lg font-semibold text-pink-600 mb-2">🚇 電車好き</h3>
-              <p className="text-gray-700">半蔵門線が一番好き！きれいで快適だから💕</p>
+              <h3 className="text-lg font-semibold text-pink-600 mb-2">🚇 {t('hobbies.trainLover')}</h3>
+              <p className="text-gray-700">{t('hobbies.trainDescription')}</p>
             </div>
             <div className="bg-purple-50 p-4 rounded-xl">
-              <h3 className="text-lg font-semibold text-purple-600 mb-2">🥒 変わった好み</h3>
-              <p className="text-gray-700">きゅうりのチップスが大好き！みんなびっくりするけど美味しいよ</p>
+              <h3 className="text-lg font-semibold text-purple-600 mb-2">🥒 {t('hobbies.uniqueTaste')}</h3>
+              <p className="text-gray-700">{t('hobbies.uniqueDescription')}</p>
             </div>
             <div className="bg-yellow-50 p-4 rounded-xl">
-              <h3 className="text-lg font-semibold text-yellow-600 mb-2">🏊‍♀️ スポーツ</h3>
-              <p className="text-gray-700">水泳が得意！プールで泳ぐのが気持ちいい</p>
+              <h3 className="text-lg font-semibold text-yellow-600 mb-2">🏊‍♀️ {t('hobbies.sports')}</h3>
+              <p className="text-gray-700">{t('hobbies.sportsDescription')}</p>
             </div>
             <div className="bg-green-50 p-4 rounded-xl">
-              <h3 className="text-lg font-semibold text-green-600 mb-2">🗾 旅行</h3>
-              <p className="text-gray-700">北海道の自然と美味しい食べ物が大好き！</p>
+              <h3 className="text-lg font-semibold text-green-600 mb-2">🗾 {t('hobbies.travel')}</h3>
+              <p className="text-gray-700">{t('hobbies.travelDescription')}</p>
             </div>
           </div>
         </div>
@@ -147,13 +147,13 @@ export default function HobbiesPage({params: {locale}}: {params: {locale: Locale
       {/* Navigation to other pages */}
       <div className="text-center">
         <div className="card-cute p-6">
-          <h3 className="text-xl font-bold text-pink-600 mb-4">他のページも見てね！ 💕</h3>
+          <h3 className="text-xl font-bold text-pink-600 mb-4">{t('hobbies.otherPages')}</h3>
           <div className="flex gap-4 justify-center">
             <Link href={`/${locale}`} className="cute-button">
-              ホームに戻る 🏠
+              {t('hobbies.backToHome')}
             </Link>
             <Link href={`/${locale}/profile`} className="cute-button">
-              プロフィールを見る 👤
+              {t('hobbies.viewProfile')}
             </Link>
           </div>
         </div>
