@@ -12,7 +12,7 @@ export default function ProfilePage({params: {locale}}: {params: {locale: Locale
     <div className="container mx-auto px-4 py-8">
       {/* Navigation */}
       <nav className="flex justify-between items-center mb-12">
-        <div className="text-2xl font-bold text-pink-600">💕 Ukei's Room</div>
+        <div className="text-2xl font-bold text-pink-600">💕 Ukei&apos;s Room</div>
         <div className="flex gap-4">
           <Link href={`/${locale}`} className="cute-button">
             {t('navigation.home')}
@@ -151,13 +151,13 @@ export default function ProfilePage({params: {locale}}: {params: {locale: Locale
       {/* Navigation to other pages */}
       <div className="mt-12 text-center">
         <div className="card-cute p-6">
-          <h3 className="text-xl font-bold text-pink-600 mb-4">他のページも見てね！ 💕</h3>
+          <h3 className="text-xl font-bold text-pink-600 mb-4">{t('hobbies.otherPages')}</h3>
           <div className="flex gap-4 justify-center">
             <Link href={`/${locale}`} className="cute-button">
-              ホームに戻る 🏠
+              {t('hobbies.backToHome')}
             </Link>
             <Link href={`/${locale}/hobbies`} className="cute-button">
-              趣味を見る 🎀
+              {t('hobbies.viewHobbies')}
             </Link>
           </div>
         </div>

@@ -12,7 +12,7 @@ export default function HomePage({params: {locale}}: {params: {locale: Locale}})
     <div className="container mx-auto px-4 py-8">
       {/* Navigation */}
       <nav className="flex justify-between items-center mb-12">
-        <div className="text-2xl font-bold text-pink-600">💕 Ukei's Room</div>
+        <div className="text-2xl font-bold text-pink-600">💕 Ukei&apos;s Room</div>
         <div className="flex gap-4">
           <Link href={`/${locale}`} className="cute-button">
             {t('navigation.home')}
